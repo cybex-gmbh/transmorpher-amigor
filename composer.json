@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "cybex/laravel-transmorpher-client": "dev-main",
+        "cybex/laravel-transmorpher-client": "dev-fix/video-upload-crash",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
