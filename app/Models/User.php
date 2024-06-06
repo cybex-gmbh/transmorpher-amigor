@@ -6,10 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Transmorpher\HasTransmorpherMedia;
+use Transmorpher\HasTransmorpherMediaInterface;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasTransmorpherMediaInterface
 {
-    use HasFactory, Notifiable;
+    use HasFactory, HasTransmorpherMedia, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -44,4 +46,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected array $transmorpherImages = [
+        'front',
+        'back'
+    ];
+
+    protected array $transmorpherVideos = [
+        'teaser',
+        'full'
+    ];
 }
